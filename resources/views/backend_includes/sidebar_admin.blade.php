@@ -19,9 +19,13 @@
 		<ul class="nav menu">
 			<li class="active"><a href="{{route('admin.index')}}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="{{route('categories.index')}}"><em><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;</em> Categories</a></li>
-			<li><a href="{{route('abouts.index')}}"><em class="fa fa-bar-chart">&nbsp;</em> Abouts</a></li>
-			<li><a href="{{route('contacts.index')}}"><em class="fa fa-toggle-off">&nbsp;</em> Contact</a></li>
-			<li><a href="panels.html"><em class="fa fa-clone">&nbsp;</em> Alerts &amp; Panels</a></li>
+			<li><a href="{{route('abouts.index')}}"><em class="fa fa-bar-chart">&nbsp;</em> About</a></li>
+			<li><a href="{{route('contacts.index')}}"><em class="fa fa-toggle-off">&nbsp;</em> Contact Us</a></li>
+			<li><a href="{{route('teams.index')}}"><em class="fa fa-clone">&nbsp;</em>Team</a></li>
+            <li><a href="{{route('questions.index')}}"><em class="fa fa-clone">&nbsp;</em>Questions</a></li>
+            <li><a href="{{route('services.index')}}"><em class="fa fa-clone">&nbsp;</em>Services</a></li>
+            <li><a href="{{route('testimonies.index')}}"><em class="fa fa-clone">&nbsp;</em>Testimonies</a></li>
+            <li><a href="{{route('users.index')}}"><em class="fa fa-clone">&nbsp;</em>Users</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>

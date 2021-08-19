@@ -1,16 +1,17 @@
 @extends('backend_layouts.layout')
 @section('title')
-Show | Contact
+Show | User
 @endsection
 @section('content')
 <div class = 'text-center'>
-
-{{$contact->id}}
+{{$user->id}}
 <br>
-{{$contact->name}}
+{{$user->name}}
 <br>
-{{$contact->email}}
+{{$user->email}}
 <br>
-{{$contact->phone}}
+{{$user->phone}}
+<br>
+{{$user->job_title}}
 </div>
 @endsection

@@ -1,16 +1,15 @@
 @extends('backend_layouts.layout')
 @section('title')
-Show | Contact
+Show | testimony
 @endsection
 @section('content')
 <div class = 'text-center'>
-
-{{$contact->id}}
+{{$testimony->id}}
 <br>
-{{$contact->name}}
+{{$testimony->user_id}}
 <br>
-{{$contact->email}}
+{{$testimony->description}}
 <br>
-{{$contact->phone}}
+{{$testimony->image}}
 </div>
 @endsection

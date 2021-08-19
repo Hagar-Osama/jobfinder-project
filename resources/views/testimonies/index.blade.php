@@ -1,48 +1,44 @@
 @extends('backend_layouts.layout')
 @section('title')
-Dashboard | Contact
+Dashboard | Testimony
 @endsection
 @section('content')
 <div class="container-fluid">
     <div class="row">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1>Dashboard<h1>
-            </div>
             <div class="alert-success">
                 {{session('success')}}
             </div>
             <div class='text-right'>
-                <a href="{{route('contacts.create')}}" class="btn btn-primary">Create New Message</a>
+                <a href="{{route('testimonies.create')}}" class="btn btn-primary">Create New testimony</a>
             </div>
-            <h2>Contact Us</h2>
+            <h2>Team</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
+                            <th>User Name</th>
+                            <th>Description</th>
+                            <th>image</th>
                             <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @isset($contacts)
-                        @if($contacts->count() > 0)
-                        @foreach($contacts as $contact)
+                        @isset($testimonies)
+                        @if($testimonies->count() > 0)
+                        @foreach($testimonies as $testimony)
                         <tr>
-                            <td>{{$contact->id}}</td>
-                            <td>{{$contact->name}}</td>
-                            <td>{{$contact->email}}</td>
-                            <td>{{$contact->phone}}</td>
-
-                            <td><a href="{{route('contacts.show',['contact'=>$contact->id])}}" class="btn btn-warning">Show</a></td>
-                            <td><a href="{{route('contacts.edit',['contact'=>$contact->id])}}" class="btn btn-warning">Edit</a></td>
+                            <td>{{$testimony->id}}</td>
+                            <td>{{$testimony->user->name}}</td>
+                            <td>{{$testimony->description}}</td>
+                            <td>{{$testimony->image}}</td>
+                            <td><a href="{{route('testimonies.show',['testimony'=>$testimony->id])}}" class="btn btn-warning">Show</a></td>
+                            <td><a href="{{route('testimonies.edit',['testimony'=>$testimony->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>
-                                <form action="{{route('contacts.destroy', ['contact'=>$contact->id])}}" method="POST">
+                                <form action="{{route('testimonies.destroy', ['testimony'=>$testimony->id])}}" method="POST">
                                     @csrf
                                     {{method_field('DELETE')}}
                                     <input type="submit" name="delete" value="Delete" class="btn btn-danger">

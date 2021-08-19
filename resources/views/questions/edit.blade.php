@@ -1,40 +1,43 @@
 @extends('backend_layouts.layout')
 @section('title')
-Edit | Categories
+Edit | Questions
 @endsection
 @section('content')
 
 <div class="container-fluid">
     <div class="row">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <h2>Category Edit</h2>
+            <h2>Service Edit</h2>
             <div>
-                <form action="{{route('categories.update',['category'=>$category->id])}}" method="POST">
+                <form action="{{route('questions.update',['question'=>$question->id])}}" method="POST">
                     @csrf
                     {{method_field('PUT')}}
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Name:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="category name" name="name" value="{{$category->name}}">
+                        <label for="exampleFormControlInput1">Question:</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="question " name="question" value="{{$question->question}}">
                     </div>
-                    @error('name')
+                    @error('question')
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>
                     @enderror
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Icon:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="category icon" name="icon" value="{{$category->icon}}">
+                        <label for="exampleFormControlInput1">Answer:</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="answer" name="answer" value="{{$question->answer}}">
                     </div>
-                    @error('icon')
+                    @error('answer')
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>
                     @enderror
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Job Number:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="category job_num" name="job_num" value="{{$category->job_num}}">
+                        <label for="exampleFormControlSelect1">Status:</label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="status">
+                            <option value="on" @if($question->status=='on') selected @else "" @endif>On</option>
+                            <option value="off" @if($question->status=='off') selected @else ""@endif>Off</option>
+                        </select>
                     </div>
-                    @error('job_num')
+                    @error('status')
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>

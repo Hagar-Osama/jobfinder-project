@@ -3,6 +3,11 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonyController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,3 +52,14 @@ Route::resource('categories', CategoryController::class);
 Route::resource('abouts', AboutController::class);
 //contact route
 Route::resource('contacts', ContactController::class);
+//team Route
+Route::resource('teams', TeamController::class);
+//Question Route
+Route::resource('questions', QuestionController::class);
+//Services Route
+Route::resource('services', ServiceController::class);
+//testimony Route
+Route::resource('testimonies', TestimonyController::class);
+//User Route
+Route::resource('users', UserController::class);
+
