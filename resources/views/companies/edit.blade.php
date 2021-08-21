@@ -1,6 +1,6 @@
 @extends('backend_layouts.layout')
 @section('title')
-Edit | User
+Edit | Company
 @endsection
 @section('content')
 
@@ -8,15 +8,15 @@ Edit | User
     <div class="row">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             </div>
-            <h2>User Edit</h2>
+            <h2>Company Edit</h2>
             <div>
-                <form action="{{route('users.update', ['user'=>$user->id])}}" method="POST" >
+                <form action="{{route('companies.update', ['company'=>$company->id])}}" method="POST" >
                     @csrf
                     {{method_field('PUT')}}
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Name:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="user name" name="name" value="{{$user->name}}">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="company name" name="name" value="{{$company->name}}">
                     </div>
                     @error('name')
                     <div class="alert alert-danger">
@@ -25,7 +25,7 @@ Edit | User
                     @enderror
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{$user->email}}">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{$company->email}}">
                     </div>
                     @error('email')
                     <div class="alert alert-danger">
@@ -43,7 +43,7 @@ Edit | User
                     @enderror
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Phone:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="user phone" name="phone" value="{{$user->phone}}">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="company phone" name="phone" value="{{$company->phone}}">
                     </div>
                     @error('phone')
                     <div class="alert alert-danger">
@@ -51,10 +51,10 @@ Edit | User
                     </div>
                     @enderror
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Job Title:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="user job title" name="job_title" value="{{$user->job_title}}">
+                        <label for="exampleFormControlInput1">Location:</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="company location" name="location" value="{{$company->location}}">
                     </div>
-                    @error('job_title')
+                    @error('location')
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>

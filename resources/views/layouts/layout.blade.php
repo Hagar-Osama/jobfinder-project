@@ -45,6 +45,8 @@
 @yield('contact')
 @yield('job_single')
 @yield('new_job')
+@yield('team')
+@yield('Q&A')
 
 
     @include('includes.footer')

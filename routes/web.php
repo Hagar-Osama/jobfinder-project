@@ -2,11 +2,16 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonyController;
+use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,27 +26,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/categories', function () {
-    return view('categories');
-});
-Route::get('/services', function () {
-    return view('services');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/job_single', function () {
-    return view('job_single');
-});
-Route::get('/new_job', function () {
-    return view('new_job');
-});
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
+Route::get('/category', [HomeController::class, 'getCategories'])->name('categories');
+Route::get('/service', [HomeController::class, 'getServices'])->name('services');
+Route::get('/about', [HomeController::class, 'getAbout'])->name('about');
+Route::get('/team', [HomeController::class, 'getTeam'])->name('team');
+Route::get('/Q&A', [HomeController::class, 'getQandA'])->name('Q&A');
+Route::get('/contact', [HomeController::class, 'getContact'])->name('contact');
+Route::get('/job_single', [HomeController::class, 'getSingleJob'])->name('singlejob');
+Route::get('/new_job', [HomeController::class, 'getNewJob'])->name('newjob');
+
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/categories', function () {
+//     return view('categories');
+// });
+// Route::get('/services', function () {
+//     return view('services');
+// });
+// Route::get('/about', function () {
+//     return view('about');
+// });
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+// Route::get('/job_single', function () {
+//     return view('job_single');
+// });
+// Route::get('/new_job', function () {
+//     return view('new_job');
+// });
 
 Route::get('adminpanel', function () {
     return view('adminpanel');
@@ -62,4 +79,12 @@ Route::resource('services', ServiceController::class);
 Route::resource('testimonies', TestimonyController::class);
 //User Route
 Route::resource('users', UserController::class);
+//Type Route
+Route::resource('types', TypeController::class);
+//Location Route
+Route::resource('locations', LocationController::class);
+//Company Route
+Route::resource('companies', CompanyController::class);
+//job Route
+Route::resource('jobs', JobController::class);
 

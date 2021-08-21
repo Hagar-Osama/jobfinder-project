@@ -60,7 +60,6 @@ class TeamController extends Controller
 
         ]);
     }
-       // Team::create($request->except(['_token', 'image']));
         return redirect()->route('teams.index')->with('success', 'team Has Been Created Successfully');
     }
 

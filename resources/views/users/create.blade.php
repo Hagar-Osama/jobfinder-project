@@ -50,7 +50,7 @@ Create | User
                     @enderror
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Job Title:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="team job title" name="job_title" value="{{old('job_title')}}">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="user job title" name="job_title" value="{{old('job_title')}}">
                     </div>
                     @error('job_title')
                     <div class="alert alert-danger">

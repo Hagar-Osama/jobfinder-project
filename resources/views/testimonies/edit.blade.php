@@ -1,6 +1,6 @@
 @extends('backend_layouts.layout')
 @section('title')
-Edit | Team
+Edit | Testimony
 @endsection
 @section('content')
 

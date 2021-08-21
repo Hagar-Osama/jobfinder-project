@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Testimony;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserController extends Controller
 {
@@ -29,7 +31,13 @@ class UserController extends Controller
             'phone'  => 'required|integer',
             'job_title'=> 'required|string|max:255|min:3',
         ]);
-        User::create($request->except(['_token']));
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' =>$request->phone,
+            'job_title' => $request->job_title
+         ]);
         return redirect()->route('users.index')->with('success', 'User Has Been Created Successfully');
     }
 
@@ -56,7 +64,13 @@ class UserController extends Controller
                 'job_title'=> 'required|string|max:255|min:3',
             ]);
         }
-        $row->update($request->except(['_token','_method']));
+        $row->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone' =>$request->phone,
+            'job_title' => $request->job_title
+         ]);
         return redirect()->route('users.index')->with('success', 'User Has Been Updated Successfully');
 
     }

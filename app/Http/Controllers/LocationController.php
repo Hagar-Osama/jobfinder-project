@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
+use App\Models\Location;
 use Illuminate\Http\Request;
 
-class ServiceController extends Controller
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $data = Service::select('id', 'name', 'icon', 'status')->get();
-        return view('services.index',['services'=> $data]);
+        $data = Location::get();
+        return view('locations.index',['locations'=> $data]);
     }
 
     /**
@@ -25,7 +25,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('services.create');
+        return view('locations.create');
     }
 
     /**
@@ -38,14 +38,14 @@ class ServiceController extends Controller
     {
         //validations
         $request->validate([
-            'name'=>'required|string|max:255|min:3|unique:services,name',
-            'icon'=>'required|string|max:255|min:3',
-             'description'=> 'required|string',
-             'status'=> 'required|in:on,off'
+            'country'=>'required|string|max:20|min:4',
+            'state'=>'required|string|max:20|min:4',
+             'city'=> 'required|string|min:4|max:20',
+             'job_id'=> 'required|integer'
 
         ]);
-        Service::create($request->except(['_token']));
-        return redirect()->route('services.index')->with('success', 'Service Has Been Created Successfully');
+        Location::create($request->except(['_token']));
+        return redirect()->route('locations.index')->with('success', 'Location Has Been Created Successfully');
     }
 
     /**
@@ -57,8 +57,8 @@ class ServiceController extends Controller
     public function show($id)
     {
 
-        $row = Service::findorfail($id);
-       return view('services.show', ['service' => $row]);
+        $row = Location::findorfail($id);
+       return view('locations.show', ['location' => $row]);
     }
 
     /**
@@ -71,8 +71,8 @@ class ServiceController extends Controller
     {
 
 
-        $row = Service::find($id);
-        return view('services.edit', ['service'=>$row]);
+        $row = Location::find($id);
+        return view('locations.edit', ['location'=>$row]);
     }
 
     /**
@@ -84,19 +84,18 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-       if ($row = Service::find($id)) {
-         //  dd($id);
+       if ($row = Location::find($id)) {
            //validations
         $request->validate([
-            'name'=>'required|string|max:255|min:3|unique:services,name,'.$id,
-            'icon'=>'required|string|max:255|min:3',
-             'description'=> 'required|string',
-             'status'=> 'required|in:on,off'
+            'country'=>'required|string|max:20|min:4',
+            'state'=>'required|string|max:20|min:4',
+             'city'=> 'required|string|min:4|max:20',
+             'job_id'=> 'required|integer'
 
         ]);
 
         $row->update($request->except(['_token','_method']));
-        return redirect()->route('services.index')->with('success', 'Service Has Been Updated Successfully');
+        return redirect()->route('locations.index')->with('success', 'Location Has Been Updated Successfully');
 
        }
 
@@ -110,9 +109,9 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        if($row = Service::find($id)) {
+        if($row = Location::find($id)) {
             $row->delete();
-            return redirect()->route('services.index')->with('success', 'Service Has Been Deleted Successfully');
+            return redirect()->route('locations.index')->with('success', 'Location Has Been Deleted Successfully');
         }
         return abort('404');
     }

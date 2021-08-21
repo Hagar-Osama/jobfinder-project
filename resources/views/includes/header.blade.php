@@ -58,12 +58,18 @@
                                         <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
                                         <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                            <li><a href="about">About</a></li>
-                                            <li><a href="services">Services</a>
-                                            <li><a href="categories">Categories</a></li>
-                                            <li><a href="job_single">A Job</a></li>
-                                        <li><a href="contact">Contact</a></li>
-                                        <li><a href="new_job"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
+                                            <li class="has-children">
+                                            <a href="{{route('about')}}">About</a>
+                                            <ul class="dropdown arrow-top">
+                                                <li><a href="{{route('team')}}">Team</a></li>
+                                                <li><a href="{{route('services')}}">Services</a>
+                                                <li><a href="{{route('categories')}}">Categories</a></li>
+                                                <li><a href="{{route('Q&A')}}">Q&A</a></li>
+                                            </ul>
+                                            </li>
+                                        <li><a href="{{route('singlejob')}}">A Job</a></li>
+                                        <li><a href="{{route('contact')}}">Contact Us</a></li>
+                                        <li><a href="{{route('newjob')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
                                         </ul>
                                     </div>
                                 </nav>

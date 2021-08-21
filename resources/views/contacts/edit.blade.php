@@ -1,6 +1,6 @@
 @extends('backend_layouts.layout')
 @section('title')
-Create | Contact
+Edit | Contact
 @endsection
 @section('content')
 <div class="container-fluid">

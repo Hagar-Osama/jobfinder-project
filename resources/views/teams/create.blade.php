@@ -7,9 +7,6 @@ Create | Team
 <div class="container-fluid">
     <div class="row">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <a href="{{route('admin.index')}}">Dashboard</a>
-            </div>
             <h2>Team Create</h2>
             <div>
                 <form action="{{route('teams.store')}}" method="POST" enctype="multipart/form-data">
@@ -27,7 +24,7 @@ Create | Team
                         <label for="exampleFormControlInput1">Job Title:</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="team job title" name="job_title" value="{{old('job_title')}}">
                     </div>
-                    @error('job')
+                    @error('job_title')
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>
