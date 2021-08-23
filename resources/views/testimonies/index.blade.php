@@ -12,7 +12,7 @@ Dashboard | Testimony
             <div class='text-right'>
                 <a href="{{route('testimonies.create')}}" class="btn btn-primary">Create New testimony</a>
             </div>
-            <h2>Team</h2>
+            <h2>Testimony</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>

@@ -59,17 +59,44 @@
 
                                         <ul class="site-menu js-clone-nav d-none d-lg-block">
                                             <li class="has-children">
-                                            <a href="{{route('about')}}">About</a>
-                                            <ul class="dropdown arrow-top">
-                                                <li><a href="{{route('team')}}">Team</a></li>
-                                                <li><a href="{{route('services')}}">Services</a>
-                                                <li><a href="{{route('categories')}}">Categories</a></li>
-                                                <li><a href="{{route('Q&A')}}">Q&A</a></li>
-                                            </ul>
+                                                <a href="{{route('about')}}">About</a>
+                                                <ul class="dropdown arrow-top">
+                                                    <li><a href="{{route('team')}}">Team</a></li>
+                                                    <li><a href="{{route('services')}}">Services</a>
+                                                    <li><a href="{{route('categories')}}">Categories</a></li>
+                                                    <li><a href="{{route('Q&A')}}">Q&A</a></li>
+                                                </ul>
                                             </li>
-                                        <li><a href="{{route('singlejob')}}">A Job</a></li>
-                                        <li><a href="{{route('contact')}}">Contact Us</a></li>
-                                        <li><a href="{{route('newjob')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
+                                            <li><a href="{{route('singlejob')}}">A Job</a></li>
+                                            <li><a href="{{route('contact')}}">Contact Us</a></li>
+                                            @guest
+                                            <li class="nav-item"><a class="nav-link" href="{{url('login')}}">Login</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="{{url('register')}}">Register</a></li>
+                                            @endguest
+                                            @auth
+                                            @if(Auth::user()->type == 'person')
+                                            <li class="nav-item">
+                                                <form action="{{url('logout')}}" method="POST">
+                                                    @csrf
+                                                    <input type="submit" value="logout" class="btn btn-primary">
+                                                </form>
+                                            <li class="nav-item">welcome, {{Auth::user()->name}}</li>
+                                            </li>
+                                            @else
+                                            <li class="nav-item">
+                                                <form action="{{url('logout')}}" method="POST">
+                                                    @csrf
+                                                    <input type="submit" value="logout" class="btn btn-primary">
+                                                </form>
+                                            <li><a href="{{route('newjob')}}"><span class="bg-primary text-white py-3 px-4 rounded"><span class="icon-plus mr-3"></span>Post New Job</span></a></li>
+
+                                            <li class="nav-item">welcome, {{Auth::user()->name}}</li>
+                                            </li>
+                                            @endif
+                                            @endauth
+                                            
+
+
                                         </ul>
                                     </div>
                                 </nav>

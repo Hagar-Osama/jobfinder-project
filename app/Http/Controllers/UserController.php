@@ -30,13 +30,15 @@ class UserController extends Controller
             'password' =>'required|min:8|',
             'phone'  => 'required|integer',
             'job_title'=> 'required|string|max:255|min:3',
+            'type'=> 'required|in:person,company'
         ]);
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' =>$request->phone,
-            'job_title' => $request->job_title
+            'job_title' => $request->job_title,
+            'type' => $request->type
          ]);
         return redirect()->route('users.index')->with('success', 'User Has Been Created Successfully');
     }
@@ -62,6 +64,8 @@ class UserController extends Controller
                 'password' =>'required|min:8',
                 'phone'  => 'required|integer',
                 'job_title'=> 'required|string|max:255|min:3',
+                'type'=> 'required|in:person,company'
+
             ]);
         }
         $row->update([
@@ -69,7 +73,9 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'phone' =>$request->phone,
-            'job_title' => $request->job_title
+            'job_title' => $request->job_title,
+            'type' => $request->type
+
          ]);
         return redirect()->route('users.index')->with('success', 'User Has Been Updated Successfully');
 

@@ -49,16 +49,29 @@ Edit | User
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>
-                    @enderror
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Job Title:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="user job title" name="job_title" value="{{$user->job_title}}">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="job title" name="job_title" value="{{old('job_title')}}">
                     </div>
                     @error('job_title')
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>
                     @enderror
+                    @enderror
+                    <div class="form-group">
+                    <label for="exampleFormControlSelect1">Register As </label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="type">
+                    <option value = "" disabled selected hidden>choose your type</option>
+                        <option value="company">Company</option>
+                        <option value="person">Person</option>
+                    </select>
+                </div>
+                    @error('type')
+                    <div class="alert alert-danger">
+                        <span class="alert-danger">{${message}}</span>
+                    </div>
+                    @enderro
                     <button type="submit" class="btn btn-primary">Update</button>
 
                 </form>

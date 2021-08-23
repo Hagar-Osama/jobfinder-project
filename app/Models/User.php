@@ -16,6 +16,7 @@ class User extends Authenticatable
         return $this->hasMany(Testimony::class);
     }
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -25,8 +26,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'job_title',
-         'phone'
+         'phone',
+         'type',
+         'job_title'
     ];
 
     /**

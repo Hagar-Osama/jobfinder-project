@@ -15,6 +15,10 @@ class Location extends Model
     {
         return $this->belongsTo(Job::class);
     }
+    // public function company()
+    // {
+    //     return $this->belongsTo(Company::class, 'id', 'company_id');
+    // }
 
 
 }

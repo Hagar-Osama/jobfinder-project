@@ -26,14 +26,14 @@ class LocationFactory extends Factory
     public function definition()
     {
         $jobs = Job::select('id')->get()->toarray();
+        // $companies = Company::select('id')->get()->toarray();
+
         static $counter = 0;
         return [
             'country' =>$this->faker->country(),
             'city' =>$this->faker->city(),
             'job_id' =>$jobs[$counter++]['id'],
-
-
-
+            // 'company_id' =>$companies[$counter++]['company_id'],
 
        ];
     }
