@@ -62,7 +62,7 @@ Route::get('/new_job', [HomeController::class, 'getNewJob'])->name('newjob');
 
 Route::get('adminpanel', function () {
     return view('adminpanel');
-})->name('admin.index');
+})->name('admin.index')->middleware('is_Admin');
 //category Route
 Route::resource('categories', CategoryController::class);
 //About Route

@@ -23,10 +23,10 @@ class ApiCategoryController extends Controller
     }
     public function store(Request $request)
     {
-        $validate = Validator::make($request->all(),[
-            'name'=>'required|string|max:255|min:3|unique:categories,name',
-            'icon'=>'required|string|max:255|min:3',
-             'job_num'=> 'required|integer',
+        $validate = Validator::make($request->all(), [
+            'name' => 'required|string|max:255|min:3|unique:categories,name',
+            'icon' => 'required|string|max:255|min:3',
+            'job_num' => 'required|integer',
 
         ]);
         if ($validate->fails()) {
@@ -34,36 +34,30 @@ class ApiCategoryController extends Controller
         }
         Category::create($request->except(['_token']));
         return response()->json('Data Has Been Stored Successfully');
-
     }
     public function update(Request $request, $id)
     {
-       // dd($request);
-        if($row = Category::find($id)) {
-            $validate= Validator::make($request->all(),[
-                'name'=>'required|string|max:255|min:3|unique:categories,name,'.$id,
-                'icon'=>'required|string|max:255|min:3',
-                 'job_num'=> 'required|integer',
+        // dd($request);
+        if ($row = Category::find($id)) {
+            $validate = Validator::make($request->all(), [
+                'name' => 'required|string|max:255|min:3|unique:categories,name,' . $id,
+                'icon' => 'required|string|max:255|min:3',
+                'job_num' => 'required|integer',
 
             ]);
             if ($validate->fails()) {
                 return response()->json($validate->errors());
             }
-            $row->update($request->except(['_token']));
-            return response()->json('Data Has Been Updated Successfully');
-
         }
+        $row->update($request->except(['_token']));
+        return response()->json('Data Has Been Updated Successfully');
     }
     public function destroy($id)
     {
         if ($row = Category::find($id)) {
             $row->delete();
             return response()->json('Data Has Been Deleted Successfully');
-
         }
         return response()->json('Data Not Found');
     }
-
-
-
 }

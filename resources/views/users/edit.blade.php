@@ -49,29 +49,41 @@ Edit | User
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>
+                    @enderror
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Job Title:</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="job title" name="job_title" value="{{old('job_title')}}">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="job title" name="job_title" value="{{$user->job_title}}">
                     </div>
                     @error('job_title')
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>
-                    @enderror
+
                     @enderror
                     <div class="form-group">
                     <label for="exampleFormControlSelect1">Register As </label>
                     <select class="form-control" id="exampleFormControlSelect1" name="type">
-                    <option value = "" disabled selected hidden>choose your type</option>
-                        <option value="company">Company</option>
-                        <option value="person">Person</option>
+                        <option value="company" @if($user->type == "company") selected @else "" @endif >Company</option>
+                        <option value="person" @if($user->type == "person") selected @else "" @endif>Person</option>
                     </select>
                 </div>
                     @error('type')
                     <div class="alert alert-danger">
-                        <span class="alert-danger">{${message}}</span>
+                        <span class="alert-danger">{{$message}}</span>
                     </div>
-                    @enderro
+                    @enderror
+                    <div class="form-group">
+                    <label for="exampleFormControlSelect1">User Role</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="is_Admin">
+                        <option value=<?= "1"; ?> @if($user->is_Admin == "1") selected @else "" @endif>Admin</option>
+                        <option value=<?= "0"; ?>@if($user->is_Admin == "0") selected @else "" @endif>User</option>
+                    </select>
+                </div>
+                    @error('is_Admin')
+                    <div class="alert alert-danger">
+                        <span class="alert-danger">{{$message}}</span>
+                    </div>
+                    @enderror
                     <button type="submit" class="btn btn-primary">Update</button>
 
                 </form>

@@ -26,11 +26,13 @@ class UserController extends Controller
          //validations
          $request->validate([
             'name' => 'required|string|max:255|min:3|unique:users,name',
-            'email' =>'required|string|max:255|unique:contacts,email',
+            'email' =>'required|string|max:255|unique:users,email',
             'password' =>'required|min:8|',
             'phone'  => 'required|integer',
             'job_title'=> 'required|string|max:255|min:3',
-            'type'=> 'required|in:person,company'
+            'type'=> 'required|in:person,company',
+            'is_Admin' => 'boolean'
+
         ]);
         User::create([
             'name' => $request->name,
@@ -38,7 +40,8 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
             'phone' =>$request->phone,
             'job_title' => $request->job_title,
-            'type' => $request->type
+            'type' => $request->type,
+            'is_Admin' => $request->is_Admin
          ]);
         return redirect()->route('users.index')->with('success', 'User Has Been Created Successfully');
     }
@@ -64,7 +67,8 @@ class UserController extends Controller
                 'password' =>'required|min:8',
                 'phone'  => 'required|integer',
                 'job_title'=> 'required|string|max:255|min:3',
-                'type'=> 'required|in:person,company'
+                'type'=> 'required|in:person,company',
+                'is_Admin' => 'boolean'
 
             ]);
         }
@@ -74,7 +78,8 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
             'phone' =>$request->phone,
             'job_title' => $request->job_title,
-            'type' => $request->type
+            'type' => $request->type,
+            'is_Admin'=>$request->is_Admin
 
          ]);
         return redirect()->route('users.index')->with('success', 'User Has Been Updated Successfully');

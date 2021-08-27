@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone')->nullable();
             $table->string('job_title')->nullable();
             $table->enum('type', ['person', 'company']);
+            $table->boolean('is_Admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

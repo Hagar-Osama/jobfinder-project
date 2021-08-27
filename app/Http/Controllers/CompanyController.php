@@ -30,7 +30,7 @@ class CompanyController extends Controller
           //validations
           $request->validate([
              'name' => 'required|string|max:255|min:3|unique:companies,name',
-             'email' =>'required|string|max:255|unique:contacts,email',
+             'email' =>'required|string|max:255|unique:companies,email',
              'password' =>'required|min:8|',
              'phone'  => 'required|integer',
              'location'=> 'required|string|max:255|min:3',

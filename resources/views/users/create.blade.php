@@ -52,7 +52,7 @@ Create | User
                         <label for="exampleFormControlInput1">Job Title:</label>
                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="job title" name="job_title" value="{{old('job_title')}}">
                     </div>
-                    @error('job_title')
+                    @error('title')
                     <div class="alert alert-danger">
                         <span class="alert-danger">{{$message}}</span>
                     </div>
@@ -67,7 +67,20 @@ Create | User
                 </div>
                     @error('type')
                     <div class="alert alert-danger">
-                        <span class="alert-danger">{${message}}</span>
+                        <span class="alert-danger">{{$message}}</span>
+                    </div>
+                    @enderror
+                    <div class="form-group">
+                    <label for="exampleFormControlSelect1">User Role</label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="is_Admin">
+                    <option value = "" disabled selected hidden>choose your Role</option>
+                        <option value=<?= "1"; ?>>Admin</option>
+                        <option value=<?= "0"; ?>>User</option>
+                    </select>
+                </div>
+                    @error('is_Admin')
+                    <div class="alert alert-danger">
+                        <span class="alert-danger">{{$message}}</span>
                     </div>
                     @enderror
                     <button type="submit" class="btn btn-primary">Create</button>
