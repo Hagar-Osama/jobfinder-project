@@ -17,7 +17,7 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->is_Admin == true) {
+        if (Auth::user()->is_Admin == true) {
             return $next($request);
         }
         return redirect()->back()->with( 'YoU Are Not Authorized');

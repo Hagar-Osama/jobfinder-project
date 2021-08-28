@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactController;
@@ -87,4 +88,5 @@ Route::resource('locations', LocationController::class);
 Route::resource('companies', CompanyController::class);
 //job Route
 Route::resource('jobs', JobController::class);
+Route::post('/jobsearch',[AjaxController::class, 'search'])->name('jobsearch');
 
