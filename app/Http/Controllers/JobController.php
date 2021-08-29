@@ -41,8 +41,8 @@ class JobController extends Controller
     {
         $request->validate([
             'title'=>'required|string|max:255|min:3|unique:jobs,title',
-             'description'=> 'required|string|max:255|min:3',
-              'salary' => 'required|integer',
+             'description'=> 'required|string|max:3000|min:3',
+              'salary' => 'required|string',
               'category_id' =>'required|integer',
               'company_id' => 'required|integer',
               'type_id' => 'required|integer',
@@ -110,8 +110,8 @@ class JobController extends Controller
             //validations
       $request->validate([
           'title'=>'required|string|max:255|min:3|unique:jobs,title,'.$id,
-          'description'=> 'required|string|max:255|min:3',
-          'salary' => 'required|integer',
+          'description'=> 'required|string|max:3000|min:3',
+          'salary' => 'required|string',
           'category_id' =>'required|integer',
           'company_id' => 'required|integer',
           'type_id' => 'required|integer',

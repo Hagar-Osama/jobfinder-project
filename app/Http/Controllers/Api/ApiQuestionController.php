@@ -25,7 +25,7 @@ class ApiQuestionController extends Controller
     {
         $validate = Validator::make($request->all(),[
             'question' => 'required|string|max:255|min:3|unique:questions,question',
-            'answer' => 'required|string|max:255|min:3',
+            'answer' => 'required|string|max:3000|min:3',
             'status'=> 'required|in:on,off'
 
         ]);
@@ -40,7 +40,7 @@ class ApiQuestionController extends Controller
         if($row = Question::find($id)) {
             $validate = Validator::make($request->all(),[
                 'question' => 'required|string|max:255|min:3|unique:questions,question,'.$id,
-                'answer' => 'required|string|max:255|min:3',
+                'answer' => 'required|string|max:3000|min:3',
                 'status'=> 'required|in:on,off'
 
             ]);

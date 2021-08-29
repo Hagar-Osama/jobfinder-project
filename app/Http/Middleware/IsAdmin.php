@@ -20,6 +20,6 @@ class IsAdmin
         if (Auth::user()->is_Admin == true) {
             return $next($request);
         }
-        return redirect()->back()->with( 'YoU Are Not Authorized');
+        return redirect()->back();
     }
 }

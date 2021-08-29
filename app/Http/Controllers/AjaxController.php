@@ -15,7 +15,7 @@ class AjaxController extends Controller
            // dd($data);
            $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
            foreach ($data as $row) {
-            $output .= ' <li><a href="#" class="ml-2"  style="color:black;">' . $row->title . '</a></li>';
+            $output .= ' <li><a href="#" class="col-md-6 mb-3 mb-md-0" style="color:green;">' . $row->title . '</a></li>';
         }
         $output .= '</ul>';
         echo $output;

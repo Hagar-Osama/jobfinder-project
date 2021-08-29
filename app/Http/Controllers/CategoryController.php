@@ -39,7 +39,7 @@ class CategoryController extends Controller
         $request->validate([
             'name'=>'required|string|max:255|min:3|unique:categories,name',
             'icon'=>'required|string|max:255|min:3',
-             'job_num'=> 'required|integer',
+             'job_num'=> 'required|string',
 
         ]);
         Category::create($request->except(['_token']));
@@ -86,7 +86,7 @@ class CategoryController extends Controller
             $request->validate([
                 'name'=>'required|string|max:255|min:3|unique:categories,name,'. $id,
                 'icon'=>'required|string|max:255|min:3',
-                 'job_num'=> 'required|integer',
+                 'job_num'=> 'required|string',
 
             ]);
             $row->update($request->except(['_token']));

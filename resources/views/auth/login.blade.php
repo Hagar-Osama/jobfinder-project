@@ -3,18 +3,25 @@
 Home | Login
 @endsection
 @section('contact')
+<div style="height: 113px;"></div>
+<div class="site-blocks-cover overlay" style="background-image: url('assets/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
+<div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 text-center" data-aos="fade">
+                <h1><b>LOG IN</b></h1>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="page-section" id="login">
     <div class="container">
-        <div class="text-center">
-            <h2 class="section-heading text-uppercase">Login</h2>
-        </div>
         <div class="row text-center">
 
             <div class="col-md-8 offset-2">
                 <form action = "{{url('login')}}" method = "POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <label for="exampleInputEmail1" class="form-label"><b>Email address</b></label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
@@ -24,7 +31,7 @@ Home | Login
                     </div>
                     @enderror
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <label for="exampleInputPassword1" class="form-label"><b>Password</b></label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                     </div>
                     @error('password')

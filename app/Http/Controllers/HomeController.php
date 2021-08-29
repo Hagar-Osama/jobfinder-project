@@ -57,20 +57,20 @@ class HomeController extends Controller
 
     public function getTeam()
     {
-        $team = Team::select('id', 'name', 'image', 'job_title');
-        return view('team', ['team' => $team]);
+        $team = Team::select('id', 'name', 'image', 'job_title')->get();
+        return view('team', ['teams' => $team]);
     }
 
     public function getQandA()
     {
-        $qanda = Question::select('id', 'question', 'answer')->where('status', '=', 'on')->get();
-        return view('Q&A', ['Q&A' => $qanda] );
+        $questions = Question::select('id', 'question', 'answer')->where('status', '=', 'on')->get();
+        return view('Q&A', ['questions' => $questions] );
     }
 
     public function getAbout()
     {
-        $about = About::select('id','image', 'description', 'name', 'job_title');
-        return view('about', ['about' => $about]);
+        $about = About::select('id','image', 'description', 'name', 'job_title')->get();
+        return view('about', ['abouts' => $about]);
     }
 
     public function getSingleJob()
@@ -88,7 +88,7 @@ class HomeController extends Controller
     public function getContact()
     {
         $contact = Contact::select('id', 'name', 'email', 'phone', 'message');
-        return view('contact', ['contact' => $contact]);
+        return view('contact', ['contacts' => $contact]);
     }
 
 }

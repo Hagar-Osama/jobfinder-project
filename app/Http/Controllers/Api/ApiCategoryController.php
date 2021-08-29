@@ -26,7 +26,7 @@ class ApiCategoryController extends Controller
         $validate = Validator::make($request->all(), [
             'name' => 'required|string|max:255|min:3|unique:categories,name',
             'icon' => 'required|string|max:255|min:3',
-            'job_num' => 'required|integer',
+            'job_num' => 'required|string',
 
         ]);
         if ($validate->fails()) {
@@ -42,7 +42,7 @@ class ApiCategoryController extends Controller
             $validate = Validator::make($request->all(), [
                 'name' => 'required|string|max:255|min:3|unique:categories,name,' . $id,
                 'icon' => 'required|string|max:255|min:3',
-                'job_num' => 'required|integer',
+                'job_num' => 'required|string',
 
             ]);
             if ($validate->fails()) {
