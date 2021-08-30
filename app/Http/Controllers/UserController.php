@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::get();
+        $users = User::select('id', 'name', 'email', 'job_title')->get();
        return view('users.index', ['users' => $users]);
     }
 

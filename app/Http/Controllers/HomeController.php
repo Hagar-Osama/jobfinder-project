@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $categories = Category::select('id', 'name','icon', 'job_num')->get();
         $testimonies = Testimony::select('id', 'image', 'description', 'user_id')->get();
-        $jobs = Job::select('id','title', 'type_id', 'image', 'salary', 'company_id',)->get();
+        $jobs = Job::select('id','title', 'type_id', 'image', 'salary', 'company_id','description')->get();
         $services = Service::select('id', 'name', 'icon', 'description')->get();
 
         return view('welcome', ['categories' => $categories,
@@ -76,7 +76,7 @@ class HomeController extends Controller
     public function getSingleJob()
     {
         $singlejob = Job::select('id','title', 'type_id', 'image', 'type_id', 'company_id', 'description')->get();
-        return view('job_single', ['job_single' => $singlejob]);
+        return view('job_single', ['job' => $singlejob]);
     }
 
     public function getNewJob()

@@ -21,6 +21,7 @@ Dashboard | Locations
                             <th>country</th>
                             <th>State</th>
                             <th>city</th>
+                            <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -34,6 +35,7 @@ Dashboard | Locations
                             <td>{{$location->country}}</td>
                             <td>{{$location->state}}</td>
                             <td>{{$location->city}}</td>
+                            <td><a href="{{route('locations.show',['location'=>$location->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('locations.edit',['location'=>$location->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>
                                 <form action="{{route('locations.destroy', ['location'=>$location->id])}}" method="POST">

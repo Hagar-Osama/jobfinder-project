@@ -21,6 +21,7 @@ Dashboard | Questions
                             <th>Question</th>
                             <th>Answer</th>
                             <th>Status</th>
+                            <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -34,6 +35,7 @@ Dashboard | Questions
                             <td>{{$question->question}}</td>
                             <td>{{$question->answer}}</td>
                             <td>{{$question->status}}</td>
+                            <td><a href="{{route('questions.show',['question'=>$question->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('questions.edit',['question'=>$question->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>
                                 <form action="{{route('questions.destroy', ['question'=>$question->id])}}" method="POST">

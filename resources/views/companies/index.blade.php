@@ -21,7 +21,6 @@ Dashboard | Company
                             <th>Name</th>
                             <th>Email</th>
                             <th>Location</th>
-                            <th>Phone</th>
                             <th>Job Name</th>
                             <th>Show</th>
                             <th>Edit</th>
@@ -39,7 +38,6 @@ Dashboard | Company
                             <td>{{$company->name}}</td>
                             <td>{{$company->email}}</td>
                             <td>{{$company->location}}</td>
-                            <td>{{$company->phone}}</td>
                             <td> @foreach ($company->jobs as $job)
                             {{ $job->name}}
                             @endforeach</td>

@@ -25,6 +25,7 @@ Dashboard | Jobs
                             <th>Category Name</th>
                             <th>Type Name</th>
                             <th>Job Location</th>
+                            <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -43,6 +44,7 @@ Dashboard | Jobs
                             <td>@if (!empty($job->type))  {{$job->type->name }} @endif</td>
                             <td>@if (!empty($job->location))  {{$job->location->country }} @endif</td>
 
+                            <td><a href="{{route('jobs.show',['job'=>$job->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('jobs.edit',['job'=>$job->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>
                                 <form action="{{route('jobs.destroy', ['job'=>$job->id])}}" method="POST">

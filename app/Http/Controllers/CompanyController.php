@@ -16,7 +16,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $data = Company::select('id','name', 'email', 'password', 'location', 'phone')->get();
+        $data = Company::select('id','name', 'location')->get();
         return view('companies.index', ['companies' => $data]);
      }
 

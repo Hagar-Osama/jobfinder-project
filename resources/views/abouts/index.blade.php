@@ -22,7 +22,8 @@ Dashboard | About
                             <th>#</th>
                             <th>Name</th>
                             <th>Job Title</th>
-                            <th>image</th>
+                            <th>Image</th>
+                            <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -36,6 +37,7 @@ Dashboard | About
                             <td>{{$about->name}}</td>
                             <td>{{$about->job_title}}</td>
                            <td>{{$about->image}}</td>
+                           <td><a href="{{route('abouts.show',['about'=>$about->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('abouts.edit',['about'=>$about->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>
                                 <form action="{{route('abouts.destroy', ['about'=>$about->id])}}" method="POST">

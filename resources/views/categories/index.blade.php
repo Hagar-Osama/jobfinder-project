@@ -23,6 +23,7 @@ Dashboard | Categories
                             <th>Name</th>
                             <th>Job Number</th>
                             <th>Icon</th>
+                            <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -40,6 +41,7 @@ Dashboard | Categories
                             {{$category->icon}}
                             @endif</td>
                            <td>{{$category->job_num}}</td>
+                           <td><a href="{{route('categories.show',['category'=>$category->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('categories.edit',['category'=>$category->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>
                                 <form action="{{route('categories.destroy', ['category'=>$category->id])}}" method="POST">

@@ -88,5 +88,6 @@ Route::resource('locations', LocationController::class);
 Route::resource('companies', CompanyController::class);
 //job Route
 Route::resource('jobs', JobController::class);
+//Ajax Route
 Route::post('/jobsearch',[AjaxController::class, 'search'])->name('jobsearch');
 

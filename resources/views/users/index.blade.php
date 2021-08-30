@@ -22,7 +22,6 @@ Dashboard | User
                             <th>Email</th>
                             <th>Job Title</th>
                             <th>Testimony Description</th>
-                            <th>Phone</th>
                             <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -42,7 +41,6 @@ Dashboard | User
                             <td>@foreach ($user->testimonies as $testimony)
                                 {{$testimony->description}} @endforeach
                             </td>
-                            <td>{{$user->phone}}</td>
                             <td><a href="{{route('users.show',['user'=>$user->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('users.edit',['user'=>$user->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>

@@ -21,6 +21,7 @@ Dashboard | Services
                             <th>Name</th>
                             <th>Status</th>
                             <th>Icon</th>
+                            <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -38,6 +39,7 @@ Dashboard | Services
                             {{$service->icon}}
                             @endif</td>
                             <td>{{$service->status}}</td>
+                            <td><a href="{{route('services.show',['service'=>$service->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('services.edit',['service'=>$service->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>
                                 <form action="{{route('services.destroy', ['service'=>$service->id])}}" method="POST">
