@@ -6,12 +6,11 @@ Dashboard | Jobs
 <div class="container-fluid">
     <div class="row">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="alert-success">
-                {{session('success')}}
-            </div>
             <div class='text-right'>
                 <a href="{{route('jobs.create')}}" class="btn btn-primary">Create New Job</a>
             </div>
+            @include('includes.alert')
+
             <h2>Jobs</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">

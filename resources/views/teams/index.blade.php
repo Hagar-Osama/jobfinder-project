@@ -6,12 +6,11 @@ Dashboard | Team
 <div class="container-fluid">
     <div class="row">
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="alert-success">
-                {{session('success')}}
-            </div>
             <div class='text-right'>
                 <a href="{{route('teams.create')}}" class="btn btn-primary">Create New Team</a>
             </div>
+            @include('includes.alert')
+
             <h2>Team</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">

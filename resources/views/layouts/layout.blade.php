@@ -56,6 +56,9 @@
             $('#job_name').val($(this).text());
             $('#jobList').fadeOut();
         });
+        $(document).on('click', function() {
+            $('#jobList').hide();
+        });
     });
 </script>
 
