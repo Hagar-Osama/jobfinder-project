@@ -34,7 +34,7 @@ Dashboard | About
                             <td>{{$about->id}}</td>
                             <td>{{$about->name}}</td>
                             <td>{{$about->job_title}}</td>
-                           <td>{{$about->image}}</td>
+                            <td> <img src="{{asset('images/about').'/'.$about->image}}" height="100px" width="100px">
                            <td><a href="{{route('abouts.show',['about'=>$about->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('abouts.edit',['about'=>$about->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>

@@ -14,7 +14,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $data = Job::select('id', 'title', 'salary', 'description', 'company_id', 'category_id', 'type_id')->get();
+        $data = Job::select('id', 'title', 'salary', 'image', 'company_id', 'category_id', 'type_id')->get();
         //  foreach ($data as $item) {
         //     dd($item->company);
         // }

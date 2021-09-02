@@ -33,7 +33,7 @@ Dashboard | Team
                             <td>{{$team->id}}</td>
                             <td>{{$team->name}}</td>
                             <td>{{$team->job_title}}</td>
-                            <td>{{$team->image}}</td>
+                            <td> <img src="{{asset('images/team').'/'.$team->image}}" height="100px" width="100px">
                             <td><a href="{{route('teams.show',['team'=>$team->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('teams.edit',['team'=>$team->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>

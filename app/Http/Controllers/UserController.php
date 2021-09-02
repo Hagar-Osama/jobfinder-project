@@ -49,7 +49,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::FindOrFail($id);
-        return view ('users.show', ['$user' => $user]);
+        return view ('users.show', ['user' => $user]);
     }
 
     public function edit($id)

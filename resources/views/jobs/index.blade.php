@@ -19,11 +19,11 @@ Dashboard | Jobs
                             <th>#</th>
                             <th>Title</th>
                             <th>Salary</th>
-                            <th>Description</th>
                             <th>Company Name</th>
                             <th>Category Name</th>
                             <th>Type Name</th>
                             <th>Job Location</th>
+                            <th>Company Image</th>
                             <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -37,11 +37,11 @@ Dashboard | Jobs
                             <td>{{$job->id}}</td>
                             <td>{{$job->title}}</td>
                             <td>{{$job->salary}}</td>
-                            <td>{{$job->description}}</td>
                             <td>@if (!empty($job->company))  {{$job->company->name }} @endif</td>
                             <td>@if (!empty($job->category))  {{$job->category->name }} @endif</td>
                             <td>@if (!empty($job->type))  {{$job->type->name }} @endif</td>
                             <td>@if (!empty($job->location))  {{$job->location->country }} @endif</td>
+                            <td> <img src="{{asset('images/jobs').'/'.$job->image}}" height="100px" width="100px"></td>
 
                             <td><a href="{{route('jobs.show',['job'=>$job->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('jobs.edit',['job'=>$job->id])}}" class="btn btn-warning">Edit</a></td>

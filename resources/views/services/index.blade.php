@@ -18,8 +18,8 @@ Dashboard | Services
                         <tr>
                             <th>#</th>
                             <th>Name</th>
-                            <th>Status</th>
                             <th>Icon</th>
+                            <th>Status</th>
                             <th>Show</th>
                             <th>Edit</th>
                             <th>Delete</th>

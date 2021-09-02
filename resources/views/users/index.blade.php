@@ -29,8 +29,6 @@ Dashboard | User
                     <tbody>
                         @isset($users)
                         @if($users->count() > 0)
-                        @endif
-                        @endisset
                         @foreach($users as $user)
                         <tr>
                             <td>{{$user->id}}</td>
@@ -53,6 +51,8 @@ Dashboard | User
 
                         </tr>
                         @endforeach
+                        @endif
+                        @endisset
                     </tbody>
                 </table>
             </div>

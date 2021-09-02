@@ -10,7 +10,7 @@ Dashboard | Company
                 <a href="{{route('companies.create')}}" class="btn btn-primary">Create New Company</a>
             </div>
             @include('includes.alert')
-            
+
             <h2>Companies</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
@@ -29,8 +29,6 @@ Dashboard | Company
                     <tbody>
                         @isset($companies)
                         @if($companies->count() > 0)
-                        @endif
-                        @endisset
                         @foreach($companies as $company)
                         <tr>
                             <td>{{$company->id}}</td>
@@ -47,12 +45,12 @@ Dashboard | Company
                                     @csrf
                                     {{method_field('DELETE')}}
                                     <input type="submit" name="delete" value="Delete" class="btn btn-danger">
-
                                 </form>
                             </td>
-
                         </tr>
                         @endforeach
+                        @endif
+                        @endisset
                     </tbody>
                 </table>
             </div>

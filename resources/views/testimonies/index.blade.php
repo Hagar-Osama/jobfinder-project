@@ -35,7 +35,7 @@ Dashboard | Testimony
                             <td>{{$testimony->user->name}}</td>
                             <td>{{$testimony->user->job_title}}</td>
                             <td>{{$testimony->description}}</td>
-                            <td>{{$testimony->image}}</td>
+                            <td> <img src="{{asset('images/testimonies').'/'.$testimony->image}}" height="100px" width="100px">
                             <td><a href="{{route('testimonies.show',['testimony'=>$testimony->id])}}" class="btn btn-warning">Show</a></td>
                             <td><a href="{{route('testimonies.edit',['testimony'=>$testimony->id])}}" class="btn btn-warning">Edit</a></td>
                             <td>
