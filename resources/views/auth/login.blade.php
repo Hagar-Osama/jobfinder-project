@@ -4,14 +4,12 @@ Home | Login
 @endsection
 @section('contact')
 <div style="height: 113px;"></div>
-<div class="site-blocks-cover overlay" style="background-image: url('assets/images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
-<div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 text-center" data-aos="fade">
-                <h1><b>LOG IN</b></h1>
-            </div>
-        </div>
+
+<div class="unit-5 overlay" style="background-image: url('assets/images/hero_1.jpg');">
+    <div class="container text-center">
+        <h2 class="mb-0">Log In</h2>
     </div>
+</div>
 </div>
 <section class="page-section" id="login">
     <div class="container">

@@ -39,27 +39,6 @@ Route::get('/new_job', [HomeController::class, 'getNewJob'])->name('newjob');
 
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/categories', function () {
-//     return view('categories');
-// });
-// Route::get('/services', function () {
-//     return view('services');
-// });
-// Route::get('/about', function () {
-//     return view('about');
-// });
-// Route::get('/contact', function () {
-//     return view('contact');
-// });
-// Route::get('/job_single', function () {
-//     return view('job_single');
-// });
-// Route::get('/new_job', function () {
-//     return view('new_job');
-// });
 
 Route::get('adminpanel', function () {
     return view('adminpanel');

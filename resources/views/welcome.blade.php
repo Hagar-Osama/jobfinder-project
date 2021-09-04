@@ -20,7 +20,7 @@
                                 <div class="col-md-6 mb-3 mb-md-0">
                                     <div class="input-wrap">
                                         <select id="country" class="form-control form-control-block search-input  border-0 px-4" id="autocomplete" name="country">
-                                        <option value = "" disabled selected hidden>city, province or region</option>
+                                        <option value = "" disabled selected hidden>choose your country</option>
                                             <option value="Afganistan">Afghanistan</option>
                                             <option value="Albania">Albania</option>
                                             <option value="Algeria">Algeria</option>

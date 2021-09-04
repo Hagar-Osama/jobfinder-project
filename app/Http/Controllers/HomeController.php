@@ -34,20 +34,6 @@ class HomeController extends Controller
         return view('categories', ['categories' => $categories]);
     }
 
-    public function getTestimonies()
-    {
-        $testimonies = Testimony::select('id', 'image', 'description', 'user_id')->get();
-        return view('testimonies', ['testimonies' => $testimonies]);
-
-    }
-
-    public function getJobs()
-    {
-        $jobs = Job::select('id','title', 'type_id', 'image', 'salary', 'company_id')->get();
-        return view('jobs', ['jobs' => $jobs]);
-
-    }
-
     public function getServices()
     {
         $services = Service::select('id', 'name', 'icon', 'description')->get();
@@ -75,20 +61,17 @@ class HomeController extends Controller
 
     public function getSingleJob()
     {
-        $singlejob = Job::select('id','title', 'type_id', 'image', 'type_id', 'company_id', 'description')->get();
-        return view('job_single', ['job' => $singlejob]);
+        return view('job_single');
     }
 
     public function getNewJob()
     {
-        $newjob = Job::select('id','title', 'type_id', 'salary', 'company_id', 'description');
-        return view('new_job', ['new_job' => $newjob]);
+        return view('new_job');
     }
 
     public function getContact()
     {
-        $contact = Contact::select('id', 'name', 'email', 'phone', 'message');
-        return view('contact', ['contacts' => $contact]);
+        return view('contact');
     }
 
 }
