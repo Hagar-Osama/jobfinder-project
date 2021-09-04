@@ -20,9 +20,7 @@ class CreateLocationsTable extends Migration
             $table->string('city');
             $table->unsignedBigInteger('job_id')->unique();
             $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade')->onUpdate('cascade');
-            // $table->unsignedBigInteger('company_id')->unique();
-            // $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade')->onUpdate('cascade');
-             $table->timestamps();
+            $table->timestamps();
         });
     }
 
