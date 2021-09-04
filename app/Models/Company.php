@@ -16,9 +16,6 @@ class Company extends Model
         return $this->hasMany(Job::class);
     }
 
-    // public function location()
-    // {
-    //     return $this->hasOne(Location::class);
-    // }
+   
 
 }
