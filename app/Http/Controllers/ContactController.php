@@ -25,7 +25,7 @@ class ContactController extends Controller
             'name'=>'required|string|max:255|min:3',
             'phone' => 'required|integer',
             'message' => 'required|string',
-            'email' =>'required|string|max:255|unique:contacts,email'
+            'email' =>'required|string|max:255'
         ]);
         Contact::create($request->except(['_token']));
         return redirect()->route('contact')->with('success', 'Message Has been submitted Successfully');
