@@ -10,20 +10,20 @@ use Illuminate\Support\Facades\Validator;
 
 class ApiContactController extends Controller
 {
-    
+
     public function index()
     {
         $data = Contact::get();
         return ContactResource::collection($data);
     }
-  
+
     public function store(Request $request)
     {
         $validate = Validator::make($request->all(),[
             'name'=>'required|string|max:255|min:3',
             'phone' => 'required|integer',
             'message' => 'required|string',
-            'email' =>'required|string|max:255|unique:contacts,email'
+            'email' =>'required|string|max:255'
         ]);
         if ($validate->fails()) {
             return response()->json($validate->errors());
@@ -31,5 +31,5 @@ class ApiContactController extends Controller
         Contact::create($request->except(['_token']));
         return response()->json('Message Has been submitted Successfully');
     }
-    
+
 }
